@@ -1,0 +1,22 @@
+= Rubyweb
+
+A literate programming system for Ruby.
+
+== Synopsis
+
+In literate programming, the documentation resides alongside the code.
+To read the manual, run rubyweb.rb on rubyweb.rb:
+
+  ruby rubyweb.rb -ds manual rubyweb.rb
+
+The documentation needs improvement.
+
+== License/Credit
+
+The author of Rubyweb is Hugh Sasse (http://www.cse.dmu.ac.uk/~hgs/).
+
+From the webpage (http://www.cse.dmu.ac.uk/~hgs/ruby/rubyweb/index.html):
+
+"The code may be copied under the same terms as Ruby itself. It is
+supplied without warranty. Corrections and enhancements will be
+gratefully received."
