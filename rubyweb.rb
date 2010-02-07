@@ -366,15 +366,15 @@ of a trailing \ is supported
                 @state.in_chunks.each do
                     |chnk|
                     # print "chnk is #{chnk.inspect}\n"  if $debugging
-		    # print "@chunks.type is #{@chunks.type}\n"  if $debugging
+		    # print "@chunks.class is #{@chunks.class}\n"  if $debugging
 		    # print "@chunks is #{@chunks.inspect}\n"  if $debugging
-                    # print "@chunks[chnk].type is #{@chunks[chnk].type}\n"  if $debugging
+                    # print "@chunks[chnk].class is #{@chunks[chnk].class}\n"  if $debugging
                     # print "@chunks[chnk] is #{@chunks[chnk].inspect}\n"  if $debugging
                     @chunks[chnk] ||= []
                     @chunks[chnk].push(@line_index)
-		    # print "@chunks.type is #{@chunks.type}\n"  if $debugging
+		    # print "@chunks.class is #{@chunks.class}\n"  if $debugging
 		    # print "@chunks is #{@chunks.inspect}\n"  if $debugging
-                    # print "@chunks[chnk].type is #{@chunks[chnk].type}\n"  if $debugging
+                    # print "@chunks[chnk].class is #{@chunks[chnk].class}\n"  if $debugging
                     # print "@chunks[chnk] is #{@chunks[chnk].inspect}\n"  if $debugging
                 end
 
@@ -435,8 +435,8 @@ my be used in expanding the streams or chunks
 	print "#{exp}expanding stream #{astream}\n expanding is #{@expanding.inspect}\n"  if $debugging
 	@streams[astream].each do
 	    |aline|
-            print "#{exp}expand_stream: aline.type is #{aline.type}\n"  if $debugging
-            unless aline.type == "String".type
+            print "#{exp}expand_stream: aline.class is #{aline.class}\n"  if $debugging
+            unless aline.class == "String".class
                  print "#{exp}#{aline}\n"  if $debugging
                  results.push(aline)
             else
@@ -478,8 +478,8 @@ my be used in expanding the streams or chunks
 	print "#{exp}expanding chunk #{achunk}\n expanding is #{@expanding.inspect}\n"  if $debugging
 	@chunks[achunk].each do
 	    |aline|
-            print "#{exp}expand_chunk: aline.type is #{aline.type}\n"  if $debugging
-            unless aline.type == "String".type
+            print "#{exp}expand_chunk: aline.class is #{aline.class}\n"  if $debugging
+            unless aline.class == "String".class
                  print "#{exp}#{aline}\n"  if $debugging
                  results.push(aline)
             else
@@ -581,7 +581,7 @@ Method for listing all the streams.
             print "   #{akey}\n"
             @streams[akey].each do
                 |avalue|
-                next unless avalue.type == String
+                next unless avalue.class == String
                 if avalue =~ /^\=use_stream\s+((\w+\s*)+)\s+/i
                     print "      uses stream #{$1}\n"
                 end
@@ -602,7 +602,7 @@ Method for listing all the chunks.
             print "   #{akey}\n"
             @chunks[akey].each do
                 |avalue|
-                next unless avalue.type == String
+                next unless avalue.class == String
                 if avalue =~ /^\=use_stream\s+((\w+\s*)+)\s+/i
                     print "      uses stream #{$1}\n"
                 end
