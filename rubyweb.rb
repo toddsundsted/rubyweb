@@ -787,7 +787,7 @@ option takes.
     pos1 = 0
     pos2 = 0
     
-    while not (pos1 == ARGV.length)
+    while not(pos1 == ARGV.length)
         print  if $debugging
         print "pos1 is #{pos1}\n"  if $debugging
         print "pos2 is #{pos2}\n"  if $debugging
